@@ -12,7 +12,7 @@ namespace Calculadora.ConsoleApp
             double x = 0, y = 0;
             while (verificar == true)
             {                
-                Console.WriteLine("Digite o tipo da operação: \n 1-Soma \n 2-Subtração \n 3-Multiplicação \n 4-Divisão \n Tabuada");
+                Console.WriteLine("Digite o tipo da operação: \n 1-Soma \n 2-Subtração \n 3-Multiplicação \n 4-Divisão \n 5-Tabuada");
                 int operacao = int.Parse(Console.ReadLine());
 
                 double resultado = 0;
