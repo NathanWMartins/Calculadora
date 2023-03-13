@@ -9,38 +9,57 @@ namespace Calculadora.ConsoleApp
             Boolean verificar = true;
             string[] v = new string[20];
             int i = 0;
+            double x = 0, y = 0;
             while (verificar == true)
-            {
-                Console.WriteLine("\nDigite o primeiro numero: ");
-                double x = double.Parse(Console.ReadLine());
-
-                Console.WriteLine("Digite o segundo numero: ");
-                double y = double.Parse(Console.ReadLine());
-
-                Console.WriteLine("Digite o tipo da operação: \n 1-Soma \n 2-Subtração \n 3-Multiplicação \n 4-Divisão");
-                string operacao = Console.ReadLine();
+            {                
+                Console.WriteLine("Digite o tipo da operação: \n 1-Soma \n 2-Subtração \n 3-Multiplicação \n 4-Divisão \n Tabuada");
+                int operacao = int.Parse(Console.ReadLine());
 
                 double resultado = 0;
                 double resultadoF = 0;
 
-                if (operacao.Equals("Soma", StringComparison.InvariantCultureIgnoreCase))
+                if (operacao == 1)
                 {
+                    Console.WriteLine("\nDigite o primeiro numero: ");
+                    x = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Digite o segundo numero: ");
+                    y = double.Parse(Console.ReadLine());
+
                     resultado = x + y;
                     Console.WriteLine(resultado);
                 }
-                else if (operacao.Equals("Subtraçao", StringComparison.InvariantCultureIgnoreCase))
+                else if (operacao == 2)
                 {
+                    Console.WriteLine("\nDigite o primeiro numero: ");
+                    x = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Digite o segundo numero: ");
+                    y = double.Parse(Console.ReadLine());
+
                     resultado = x - y;
                     Console.WriteLine(resultado);
                 }
-                else if (operacao.Equals("Multiplicaçao", StringComparison.InvariantCultureIgnoreCase))
+                else if (operacao == 3)
                 {
+                    Console.WriteLine("\nDigite o primeiro numero: ");
+                    x = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Digite o segundo numero: ");
+                    y = double.Parse(Console.ReadLine());
+
                     resultado = x * y;
                     Console.WriteLine(resultado);
                 }
-                else if(operacao.Equals("Divisao", StringComparison.InvariantCultureIgnoreCase))
+                else if(operacao == 4)
                 {
-                    while(y == 0)
+                    Console.WriteLine("\nDigite o primeiro numero: ");
+                    x = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Digite o segundo numero: ");
+                    y = double.Parse(Console.ReadLine());
+
+                    while (y == 0)
                     {
                         Console.WriteLine("Não é possivel dividir um numero por 0");
                         Console.WriteLine("Digite novamente o segundo numero: ");
@@ -50,9 +69,19 @@ namespace Calculadora.ConsoleApp
                     resultadoF = Math.Round(resultado, 2);
                     Console.WriteLine(resultadoF);
                 }
+                else if(operacao == 5)
+                {
+                    Console.WriteLine("\nDigite o numero: ");
+                    x = double.Parse(Console.ReadLine());
+
+                    for (int j = 0; j <= 10; j++)
+                    {
+                        Console.WriteLine(j + " * " + x + "= " + (x*j));
+                    }
+                }
                 string textX = Convert.ToString(x);
                 string textY = Convert.ToString(y);
-                if(operacao.Equals("Divisao", StringComparison.InvariantCultureIgnoreCase))
+                if(operacao == 4)
                 {
                     string textRF = Convert.ToString(resultadoF);
                     v[i] = (textX + " + " + textY + "= " + textRF);
